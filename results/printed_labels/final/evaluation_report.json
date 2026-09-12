@@ -1,0 +1,93 @@
+{
+  "status": "completed_first_locked_real_test",
+  "scope": "single_fixed_design_printed_label_pilot",
+  "paper_result_reproduced": false,
+  "checkpoint_step": 2000,
+  "author_commit": "dc4a9bd2a2a5b1c31223daab4bdfea3f6a5b2990",
+  "registered_test_images": 53,
+  "registered_normal_images": 10,
+  "registered_anomaly_images": 43,
+  "physical_test_labels": 11,
+  "frozen_configuration": {
+    "seed": 230274,
+    "t_distance": 50,
+    "pixel_threshold": 0.023506546393036842,
+    "image_score_quantile": 0.995,
+    "image_threshold": 0.030804647132754326
+  },
+  "image_level_model_only": {
+    "tp": 11,
+    "tn": 9,
+    "fp": 1,
+    "fn": 32,
+    "auroc": 0.5116279069767442,
+    "average_precision": 0.8664955983203673,
+    "sensitivity": 0.2558139534883721,
+    "specificity": 0.9,
+    "precision": 0.9166666666666666,
+    "f1": 0.4,
+    "balanced_accuracy": 0.577906976744186
+  },
+  "pixel_level_model_only": {
+    "auroc": 0.6141276884509423,
+    "average_precision": 0.20015690820685053,
+    "normal_pixel_fpr": 0.004578336809176225,
+    "mean_dice_defect_images": 0.1603797476574376,
+    "mean_iou_defect_images": 0.1125902844338494,
+    "mean_pixel_recall_defect_images": 0.13278824512884527
+  },
+  "by_category": {
+    "missing_print": {
+      "image_count": 15,
+      "physical_label_count": 3,
+      "image_sensitivity": 0.0,
+      "image_auroc_vs_normals": 0.17333333333333334,
+      "image_average_precision_vs_normals": 0.45439034548706103,
+      "mean_dice": 0.0007103511470528519,
+      "mean_iou": 0.00035637306130560165,
+      "pixel_auroc_within_defect_images": 0.5017862897884512,
+      "pixel_average_precision_within_defect_images": 0.10275328395482193
+    },
+    "smudge": {
+      "image_count": 15,
+      "physical_label_count": 3,
+      "image_sensitivity": 0.0,
+      "image_auroc_vs_normals": 0.48,
+      "image_average_precision_vs_normals": 0.6128489545880851,
+      "mean_dice": 0.027632803224173354,
+      "mean_iou": 0.014926500253191394,
+      "pixel_auroc_within_defect_images": 0.5721168676282719,
+      "pixel_average_precision_within_defect_images": 0.01697154812072241
+    },
+    "tear": {
+      "image_count": 13,
+      "physical_label_count": 3,
+      "image_sensitivity": 0.8461538461538461,
+      "image_auroc_vs_normals": 0.9384615384615385,
+      "image_average_precision_vs_normals": 0.9647194910352801,
+      "mean_dice": 0.49778321797703257,
+      "mean_iou": 0.35477993314908224,
+      "pixel_auroc_within_defect_images": 0.8395017947413503,
+      "pixel_average_precision_within_defect_images": 0.5582168114275317
+    }
+  },
+  "end_to_end_hybrid": {
+    "registered_model_tp": 11,
+    "registration_stage_tp": 2,
+    "total_anomaly_photographs": 45,
+    "sensitivity": 0.28888888888888886,
+    "specificity": 0.9,
+    "warning": "Hybrid pipeline result; registration rejects are not DTU-Net detections."
+  },
+  "mean_inference_seconds_per_image": 4.003695288962267,
+  "peak_gpu_allocated_gib": 0.48102521896362305,
+  "peak_gpu_reserved_gib": 0.5,
+  "gpu": "Tesla T4",
+  "limitations": [
+    "The 43 registered anomaly images are repeated captures of nine physical defects.",
+    "Missing-print samples are white-paper covered-print simulations.",
+    "Smudge masks conservatively include clearly added visible strokes away from expected print.",
+    "Two severe tear photographs were rejected before model inference because registration was underdetermined.",
+    "This pilot does not reproduce the paper training scale or reported benchmark result."
+  ]
+}

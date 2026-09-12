@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "source": "10 held-out normal photographs from physical labels N09 and N10",
+  "checkpoint_step": 2000,
+  "author_commit": "dc4a9bd2a2a5b1c31223daab4bdfea3f6a5b2990",
+  "t_distance": 250,
+  "pixel_threshold_rule": "higher 0.995 quantile of validation-normal ROI residual pixels",
+  "pixel_threshold": 0.1624249964952469,
+  "target_validation_normal_pixel_fpr": 0.005,
+  "observed_validation_normal_pixel_fpr": 0.004998696558915537,
+  "image_score_rule": "0.995 quantile of ROI residual pixels",
+  "image_threshold_rule": "maximum validation-normal image score",
+  "image_threshold": 0.2137904018163681,
+  "observed_validation_image_fpr": 0.0,
+  "validation_count": 10,
+  "median_inference_seconds_per_image": 18.782537558699993,
+  "peak_gpu_allocated_gib": 0.48102521896362305,
+  "test_images_used": 0,
+  "frozen_for_test": [
+    "checkpoint",
+    "registration",
+    "input transform",
+    "t_distance",
+    "pixel threshold",
+    "image score",
+    "image threshold"
+  ]
+}

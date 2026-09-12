@@ -1,0 +1,31 @@
+{
+  "source_url": "https://github.com/MAXNORM8650/Annotsim",
+  "source_kind": "previously downloaded local snapshot; no remote commit claimed",
+  "source_files": 62,
+  "syntax_errors": [
+    {
+      "file": "scripts/diffusion_training_WS.py",
+      "error": "positional argument follows keyword argument (<unknown>, line 99)"
+    }
+  ],
+  "critical_sha256": {
+    "GaussianDiffusion.py": "cdf7a2143a441d20a3250458c0683c53ac1484ef8f0d0927831e66a34b52ec9a",
+    "scripts/diffusion_training.py": "346e357b0af353574ad811d5342210db7de1bcb13b54ad3160cacbc17b668b38",
+    "src/models/UModels/UDHVT.py": "f7303c4dd228a3f5e1ab98d16fe1db7c7abfecfa97f683e89449128c5a03a4c2",
+    "utils/Simplex/noise.py": "d114b6898369a0299e48f95fe4165fb3d587dcb8d7e257b58aef02077b6249d3",
+    "utils/dataset.py": "36e94fc23e15a01aeaf63512ddf3c13fd568bf9f2e4d8eb8f30853b3c7065522",
+    "requirements.txt": "0a165f91eaab324887e4d40dbe5c00f23c5f6df6a1950da00fb6ec912bc13547",
+    "README.md": "8c954ab2d4cee79b0abe9982865628cc7ca7b5268c280a3e7e7b8eeeab876dd0"
+  },
+  "readme_entrypoints": {
+    "src/scripts/diffusion_training_UVW.py": false,
+    "src/scripts/detection.py": false
+  },
+  "checkpoint_files": [],
+  "checks_not_performed": [
+    "upstream dependency installation",
+    "author model forward/backward",
+    "diffusion training",
+    "paper result reproduction"
+  ]
+}

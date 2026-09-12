@@ -1,0 +1,19 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "numpy": "2.3.5",
+    "Pillow": "12.3.0",
+    "torch": null,
+    "torchvision": null,
+    "timm": null,
+    "einops": null,
+    "numba": null
+  },
+  "hardware_observed": {
+    "cpu": "Intel Core i7-8650U",
+    "gpu": "Intel UHD Graphics 620",
+    "ram_bytes": 17092894720
+  },
+  "note": "Python package report describes the runtime used here, not every Python environment on the computer."
+}

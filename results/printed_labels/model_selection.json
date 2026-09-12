@@ -1,0 +1,125 @@
+{
+  "status": "passed",
+  "scope": "validation_only_model_selection",
+  "real_test_images_used": 0,
+  "checkpoint_step": 2000,
+  "author_commit": "dc4a9bd2a2a5b1c31223daab4bdfea3f6a5b2990",
+  "candidate_distances": [
+    50,
+    100,
+    250
+  ],
+  "selection_rule": "highest mean synthetic-defect Dice; then sensitivity; then shorter distance",
+  "selected": {
+    "distance": 50,
+    "pixel_threshold": 0.023506546393036842,
+    "image_threshold": 0.030804647132754326,
+    "normal_pixel_fpr": 0.004998696558915537,
+    "normal_image_fpr": 0.0,
+    "synthetic_mean_dice": 0.531818556586623,
+    "synthetic_mean_iou": 0.429141885251991,
+    "synthetic_image_sensitivity": 0.4666666666666667,
+    "mean_seconds_per_image": 3.6049217822499955,
+    "by_kind": {
+      "missing_print": {
+        "mean_dice": 0.5460377590335805,
+        "image_sensitivity": 0.2
+      },
+      "smudge": {
+        "mean_dice": 0.8430374586294755,
+        "image_sensitivity": 1.0
+      },
+      "tear": {
+        "mean_dice": 0.20638045209681283,
+        "image_sensitivity": 0.2
+      }
+    }
+  },
+  "all_candidates": [
+    {
+      "distance": 50,
+      "pixel_threshold": 0.023506546393036842,
+      "image_threshold": 0.030804647132754326,
+      "normal_pixel_fpr": 0.004998696558915537,
+      "normal_image_fpr": 0.0,
+      "synthetic_mean_dice": 0.531818556586623,
+      "synthetic_mean_iou": 0.429141885251991,
+      "synthetic_image_sensitivity": 0.4666666666666667,
+      "mean_seconds_per_image": 3.6049217822499955,
+      "by_kind": {
+        "missing_print": {
+          "mean_dice": 0.5460377590335805,
+          "image_sensitivity": 0.2
+        },
+        "smudge": {
+          "mean_dice": 0.8430374586294755,
+          "image_sensitivity": 1.0
+        },
+        "tear": {
+          "mean_dice": 0.20638045209681283,
+          "image_sensitivity": 0.2
+        }
+      }
+    },
+    {
+      "distance": 100,
+      "pixel_threshold": 0.048022881150245667,
+      "image_threshold": 0.059424955397844315,
+      "normal_pixel_fpr": 0.004998696558915537,
+      "normal_image_fpr": 0.0,
+      "synthetic_mean_dice": 0.5044781828925637,
+      "synthetic_mean_iou": 0.3901951065574835,
+      "synthetic_image_sensitivity": 0.7,
+      "mean_seconds_per_image": 6.967418581349998,
+      "by_kind": {
+        "missing_print": {
+          "mean_dice": 0.6342045713609169,
+          "image_sensitivity": 1.0
+        },
+        "smudge": {
+          "mean_dice": 0.712661217814943,
+          "image_sensitivity": 0.9
+        },
+        "tear": {
+          "mean_dice": 0.16656875950183125,
+          "image_sensitivity": 0.2
+        }
+      }
+    },
+    {
+      "distance": 250,
+      "pixel_threshold": 0.18893861770629883,
+      "image_threshold": 0.2755044996738434,
+      "normal_pixel_fpr": 0.004998696558915537,
+      "normal_image_fpr": 0.0,
+      "synthetic_mean_dice": 0.4452220844420118,
+      "synthetic_mean_iou": 0.3280710760676144,
+      "synthetic_image_sensitivity": 0.3333333333333333,
+      "mean_seconds_per_image": 17.32040242452501,
+      "by_kind": {
+        "missing_print": {
+          "mean_dice": 0.583379630357092,
+          "image_sensitivity": 0.5
+        },
+        "smudge": {
+          "mean_dice": 0.6373529254610312,
+          "image_sensitivity": 0.4
+        },
+        "tear": {
+          "mean_dice": 0.1149336975079122,
+          "image_sensitivity": 0.1
+        }
+      }
+    }
+  ],
+  "synthetic_validation_warning": "Digitally generated validation defects support parameter selection but do not estimate real-defect accuracy.",
+  "frozen_for_real_test": [
+    "checkpoint",
+    "registration",
+    "input transform",
+    "selected distance",
+    "pixel threshold",
+    "image score",
+    "image threshold"
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "status": "passed",
+  "scope": "integration_check_only",
+  "upstream_commit": "dc4a9bd2a2a5b1c31223daab4bdfea3f6a5b2990",
+  "source_sha256": {
+    "src/models/UModels/UDHVT.py": "f7303c4dd228a3f5e1ab98d16fe1db7c7abfecfa97f683e89449128c5a03a4c2",
+    "GaussianDiffusion.py": "cdf7a2143a441d20a3250458c0683c53ac1484ef8f0d0927831e66a34b52ec9a",
+    "utils/Simplex/constants.py": "52bf6ba3e2c0d386fa420382de380093a8dd61f488765cb812b13e25d0be7294",
+    "utils/Simplex/internals.py": "ef67562885dcfe3356acd97784fe10660bf21238be7bcc608e86053c529fd61a",
+    "utils/Simplex/noise.py": "d114b6898369a0299e48f95fe4165fb3d587dcb8d7e257b58aef02077b6249d3"
+  },
+  "compatibility_changes": {
+    "imports": {
+      "from torchvision import models": "# Removed unused torchvision.models import.",
+      "from timm.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD, IMAGENET_INCEPTION_MEAN, IMAGENET_INCEPTION_STD": "# Removed unused timm image constants.",
+      "from timm.models.helpers import build_model_with_cfg, named_apply, adapt_input_conv": "from timm.models._manipulate import named_apply",
+      "from timm.models.layers import trunc_normal_, lecun_normal_, to_2tuple": "from timm.layers import trunc_normal_, lecun_normal_, to_2tuple",
+      "from timm.models.registry import register_model": "# Removed unused timm registry import."
+    },
+    "extra_import": "numpy for the author PositionalEmbedding helper",
+    "adapter": "Select tuple element 0; preserve the backbone computation.",
+    "diffusion_loading": "AST-load only the author definitions required for Gaussian/Tsimplex L2 and sampling; other losses are not supported.",
+    "sampling": "Pass denoise_fn=noise_fn so reverse steps use configured O/mu/p instead of the author alternate branch defaults.",
+    "calling_convention": "Set author diffusion train=False to select model(x,t,y=lab) during sampling. This is a dispatch flag; the model is explicitly switched with model.train()/eval()."
+  },
+  "model_configuration": {
+    "img_size": 224,
+    "patch_size": 16,
+    "in_chans": 3,
+    "embed_dim": 384,
+    "depth": 12,
+    "num_heads": 6,
+    "mlp_ratio": 4.0,
+    "num_classes": null,
+    "mlp_time_embed": true,
+    "use_dec": [
+      "DAFF",
+      "DAFF",
+      "DAFF"
+    ],
+    "PE_type": "SPE",
+    "refinement": true,
+    "qkv_bias": false
+  },
+  "configuration_note": "Illustrated SPE/DMHA/HFF/refinement variant. Code depth=12 gives six encoder blocks, one middle, six decoder blocks. This is not asserted to match every paper table.",
+  "torch": "2.11.0+cu128",
+  "gpu": "Tesla T4",
+  "gpu_vram_gib": 14.56317138671875,
+  "packages": {
+    "timm": "1.0.28",
+    "einops": "0.8.2",
+    "numba": "0.61.2",
+    "numpy": "2.1.3"
+  },
+  "noise_parameters": {
+    "octave": 6,
+    "frequency": 64,
+    "persistence": 0.9
+  },
+  "training_steps": 2,
+  "batch_size": 2,
+  "total_diffusion_steps": 1000,
+  "reconstruction_steps": 8,
+  "parameter_count": 28863812,
+  "noise_first_compile_seconds": 9.130635827999981,
+  "noise_shape": [
+    2,
+    3,
+    224,
+    224
+  ],
+  "noise_mean": -0.07675081491470337,
+  "noise_std": 0.4743904769420624,
+  "noise_normalization": "Author raw amplitude retained; no per-sample standardization.",
+  "batch_noise_note": "The author generator uses t as the fourth coordinate. Duplicate time coordinates with one seed can produce identical noise across batch entries; this remains to be assessed during training.",
+  "losses": [
+    0.35216736793518066,
+    0.3682034909725189
+  ],
+  "gradient_norms": [
+    0.5486220121383667,
+    0.5450539588928223
+  ],
+  "tracked_parameter_changed": true,
+  "parameters_without_grad": [
+    "backbone.cls_token"
+  ],
+  "reconstruction_shape": [
+    1,
+    3,
+    224,
+    224
+  ],
+  "residual_shape": [
+    1,
+    224,
+    224
+  ],
+  "peak_gpu_allocated_gib": 0.7899093627929688,
+  "peak_gpu_reserved_gib": 0.802734375,
+  "not_completed": [
+    "Training a useful anomaly model",
+    "Real label dataset",
+    "Paper metrics reproduction",
+    "Quality comparison with CPU baseline"
+  ]
+}

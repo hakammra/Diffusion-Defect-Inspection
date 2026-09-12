@@ -1,0 +1,20 @@
+{
+  "verification_source": "User-reported GPU check and observed Kaggle notebook outputs",
+  "provider": "Kaggle",
+  "python": "3.12.13",
+  "platform": "Linux-6.12.90+-x86_64-with-glibc2.35",
+  "torch": "2.10.0+cu128",
+  "cuda_runtime": "12.8",
+  "cuda_available": true,
+  "gpu": "Tesla T4",
+  "gpu_vram_gib": 14.56219482421875,
+  "small_optimization_check": "passed",
+  "packages": {
+    "torchvision": "0.25.0+cu128",
+    "timm": "1.0.26",
+    "einops": "0.8.2",
+    "numba": "0.60.0",
+    "numpy": "2.0.2",
+    "Pillow": "11.3.0"
+  }
+}
